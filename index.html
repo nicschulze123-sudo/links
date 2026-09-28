@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nicolas Schulze · Links</title>
+<meta name="description" content="Desenvolvedor Unity e Engenheiro de Software. Simulação, level design, iluminação e ferramentas em Unity.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nicschulze123-sudo.github.io/links/">
+<meta property="og:title" content="Nicolas Schulze · Desenvolvedor Unity">
+<meta property="og:description" content="Portfólio, Instagram e YouTube.">
+<meta property="og:image" content="https://nicschulze123-sudo.github.io/links/preview.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0F0E17">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@700&family=JetBrains+Mono:wght@500&display=swap">
+<script>
+  // Aplica o tema salvo antes de desenhar a página (evita piscar)
+  try{var m=localStorage.getItem('ns-mode');if(m==='light'||m==='dark')document.documentElement.setAttribute('data-mode',m)}catch(e){}
+</script>
+<style>
+:root{
+  color-scheme:dark;
+  --surface:#0F0E17;--surface-raised:#17152A;--line:#2C2942;--line-strong:#4A4663;
+  --ink:#EDEBF5;--ink-body:#C9C5DA;--ink-muted:#A9A4BF;
+  --estudo:#9D7CFF;--estudo-soft:#231F3D;--on-estudo:#0F0E17;--focus:#9D7CFF;
+  --estudo-hover:#B29AFF;--error:#FF9C8A;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --sans:Barlow,system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --space-2:8px;--space-3:12px;--space-4:16px;--space-5:22px;--space-6:28px;--space-7:44px;--space-8:64px;
+  --radius-sm:8px;--radius-lg:16px;--radius-xl:20px;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){color-scheme:light;
+  --surface:#F2EFE8;--surface-raised:#FBF9F4;--line:#C8C1B2;--line-strong:#9A94AD;
+  --ink:#0F0E17;--ink-body:#3E3A52;--ink-muted:#5E5A73;
+  --estudo:#6A4BD6;--estudo-soft:#E6E0FA;--on-estudo:#F2EFE8;--focus:#6A4BD6;
+  --estudo-hover:#5638C0;--error:#B3261E;}}
+:root[data-theme="light"]{color-scheme:light;
+  --surface:#F2EFE8;--surface-raised:#FBF9F4;--line:#C8C1B2;--line-strong:#9A94AD;
+  --ink:#0F0E17;--ink-body:#3E3A52;--ink-muted:#5E5A73;
+  --estudo:#6A4BD6;--estudo-soft:#E6E0FA;--on-estudo:#F2EFE8;--focus:#6A4BD6;
+  --estudo-hover:#5638C0;--error:#B3261E;}
+:root[data-mode="light"]{color-scheme:light;
+  --surface:#F2EFE8;--surface-raised:#FBF9F4;--line:#C8C1B2;--line-strong:#9A94AD;
+  --ink:#0F0E17;--ink-body:#3E3A52;--ink-muted:#5E5A73;
+  --estudo:#6A4BD6;--estudo-soft:#E6E0FA;--on-estudo:#F2EFE8;--focus:#6A4BD6;
+  --estudo-hover:#5638C0;--error:#B3261E;}
+:root[data-mode="dark"]{color-scheme:dark;
+  --surface:#0F0E17;--surface-raised:#17152A;--line:#2C2942;--line-strong:#4A4663;
+  --ink:#EDEBF5;--ink-body:#C9C5DA;--ink-muted:#A9A4BF;
+  --estudo:#9D7CFF;--estudo-soft:#231F3D;--on-estudo:#0F0E17;--focus:#9D7CFF;
+  --estudo-hover:#B29AFF;--error:#FF9C8A;}
+*{box-sizing:border-box}
+html{background:var(--surface)}
+body{margin:0;background:var(--surface);color:var(--ink-body);font:400 17px/1.6 var(--sans);padding-inline:16px;padding-block:var(--space-7) var(--space-6);min-height:100%}
+.wrap{max-width:440px;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-6)}
+a,button,input{font:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+.lockup{display:flex;align-items:center;gap:var(--space-4)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:var(--space-3)}
+.modes{display:flex;gap:2px;padding:3px;border:1px solid var(--line-strong);border-radius:var(--radius-sm);background:var(--surface-raised)}
+.mode{display:grid;place-items:center;width:36px;height:32px;border:0;border-radius:5px;background:none;color:var(--ink-muted);cursor:pointer}
+.mode:hover{color:var(--ink)}
+.mode[aria-pressed="true"]{background:var(--estudo);color:var(--on-estudo)}
+.mode svg{display:block}
+.lockup svg{height:44px;width:auto;display:block;color:var(--estudo)}
+.lockup .rule{width:1px;align-self:stretch;background:var(--line-strong)}
+.lockup .name{font:500 13px/1.35 var(--sans);letter-spacing:6px;color:var(--ink);text-transform:uppercase}
+
+.intro{display:flex;flex-direction:column;gap:var(--space-3)}
+.label{font:600 13px/1.2 var(--sans);letter-spacing:4px;text-transform:uppercase;color:var(--estudo)}
+h1{margin:0;font:700 clamp(36px,11vw,48px)/0.95 var(--display);text-transform:uppercase;color:var(--ink);text-wrap:balance;letter-spacing:.3px}
+.intro p{margin:0;color:var(--ink-body)}
+
+.feature{position:relative;margin:0}
+.feature img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 60%;border-radius:var(--radius-xl);border:1px solid var(--line)}
+.feature .tag{position:absolute;left:var(--space-4);bottom:var(--space-4);background:rgba(15,14,23,.9);border-radius:var(--radius-sm);padding:6px 10px;font:600 12px/1.2 var(--sans);letter-spacing:3px;text-transform:uppercase;color:#EDEBF5}
+.feature .tag b{color:#9D7CFF;font-weight:600}
+
+.links{display:flex;flex-direction:column;gap:var(--space-3);list-style:none;margin:0;padding:0}
+.btn{display:grid;grid-template-columns:1fr auto;align-items:center;gap:var(--space-3);min-height:64px;padding:var(--space-3) var(--space-5);border-radius:var(--radius-sm);border:1px solid var(--line-strong);background:var(--surface-raised);color:var(--ink);text-decoration:none;transition:border-color .15s,background .15s}
+.btn .t{font:700 26px/1 var(--display);text-transform:uppercase;letter-spacing:.5px}
+.btn .s{display:block;font:500 13px/1.4 var(--mono);color:var(--ink-muted);margin-top:4px;overflow-wrap:anywhere}
+.btn .arrow{font:600 20px/1 var(--sans);color:var(--estudo)}
+a.btn:hover{border-color:var(--estudo);background:var(--estudo-soft)}
+.btn.primary{background:var(--estudo);border-color:var(--estudo);color:var(--on-estudo)}
+.btn.primary .s,.btn.primary .arrow{color:var(--on-estudo)}
+a.btn.primary:hover{background:var(--estudo-hover);border-color:var(--estudo-hover)}
+.btn.off{opacity:.55;cursor:default}
+.btn.primary.off{background:var(--surface-raised);border-color:var(--line-strong);color:var(--ink);opacity:.55}
+.btn.primary.off .s{color:var(--ink-muted)}
+
+footer{display:flex;flex-direction:column;gap:var(--space-4);border-top:1px solid var(--line);padding-top:var(--space-4)}
+.foot-row{display:flex;justify-content:space-between;align-items:center;gap:var(--space-3);flex-wrap:wrap;font:500 14px/1.4 var(--sans);color:var(--ink-muted)}
+.ghost{background:none;border:1px solid var(--line-strong);color:var(--ink);border-radius:var(--radius-sm);padding:8px 14px;font:600 12px/1.2 var(--sans);letter-spacing:3px;text-transform:uppercase;cursor:pointer}
+.ghost:hover{border-color:var(--estudo)}
+.solid{background:var(--estudo);border:1px solid var(--estudo);color:var(--on-estudo);border-radius:var(--radius-sm);padding:8px 14px;font:600 12px/1.2 var(--sans);letter-spacing:3px;text-transform:uppercase;cursor:pointer}
+.solid:disabled{opacity:.6;cursor:wait}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="top">
+    <div class="lockup"><svg xmlns="http://www.w3.org/2000/svg" viewBox="586 322 1037 1065" role="img" aria-label="Monograma N"><path fill="currentColor" fill-rule="evenodd" d="M586 322H854L1148 660L1623 1184V1387H1378L828 697V1153H956L1135 1387H586Z M1090 322H1623V1000L1382 746V553H1268Z"/></svg><span class="rule" aria-hidden="true"></span><span class="name">Nicolas<br>Schulze</span></div>
+    <div class="modes" role="group" aria-label="Tema">
+      <button type="button" class="mode" data-set="light" aria-label="Modo claro" title="Modo claro"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button type="button" class="mode" data-set="dark" aria-label="Modo escuro" title="Modo escuro"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg></button>
+    </div>
+  </header>
+
+  <section class="intro">
+    <span class="label">Unity · Level design · Ferramentas</span>
+    <h1>Desenvolvedor Unity</h1>
+    <p>Engenheiro de Software. Simulação, level design, iluminação e ferramentas em Unity.</p>
+  </section>
+
+  <!--
+    LINKS
+    Para trocar um endereço, mude o href="...".
+    Para ativar o YouTube, apague o bloco "em breve" e descomente o bloco de baixo com o seu link.
+    O primeiro botão (class="btn primary") é o destaque roxo.
+  -->
+  <ul class="links">
+    <li><a class="btn primary" href="https://nicschulze123-sudo.github.io/" target="_blank" rel="noopener"><span class="t">Portfólio</span><span class="arrow" aria-hidden="true">→</span></a></li>
+    <li><a class="btn" href="https://www.instagram.com/nicolas.sschulze/" target="_blank" rel="noopener"><span class="t">Instagram</span><span class="arrow" aria-hidden="true">→</span></a></li>
+    <li><div class="btn off" aria-disabled="true"><span><span class="t">YouTube</span><span class="s">em breve</span></span><span class="arrow" aria-hidden="true">·</span></div></li>
+    <!-- <li><a class="btn" href="https://www.youtube.com/@SEUCANAL" target="_blank" rel="noopener"><span class="t">YouTube</span><span class="arrow" aria-hidden="true">→</span></a></li> -->
+  </ul>
+
+  <figure class="feature">
+    <img src="house-farm.jpg" alt="Sala do projeto House Farm, cena renderizada na Unity" width="800" height="1000" loading="lazy">
+    <figcaption class="tag"><b>Projeto</b> · House Farm</figcaption>
+  </figure>
+
+  <footer>
+    <div class="foot-row"><span>© <span id="ano">2026</span> Nicolas Schulze</span></div>
+  </footer>
+
+</main>
+<script>
+  (function(){
+    var root=document.documentElement, btns=document.querySelectorAll('.mode');
+    function isDark(){return getComputedStyle(root).colorScheme.indexOf('dark')>-1}
+    function sync(){
+      var d=isDark();
+      btns.forEach(function(b){b.setAttribute('aria-pressed',String((b.getAttribute('data-set')==='dark')===d))});
+      var tc=document.querySelector('meta[name=theme-color]');if(tc)tc.content=d?'#0F0E17':'#F2EFE8';
+    }
+    btns.forEach(function(b){b.addEventListener('click',function(){
+      var m=b.getAttribute('data-set');root.setAttribute('data-mode',m);
+      try{localStorage.setItem('ns-mode',m)}catch(e){}
+      sync();
+    })});
+    try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',sync)}catch(e){}
+    document.getElementById('ano').textContent=new Date().getFullYear();
+    sync();
+  })();
+</script>
+</body>
+</html>
