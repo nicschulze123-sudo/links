@@ -4,12 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Links.Nicolas.Schulze</title>
-<meta name="description" content="Desenvolvedor Unity e Engenheiro de Software. Simulação, level design, iluminação e ferramentas em Unity.">
+<meta name="description" content="Desenvolvedor Unity e Engenheiro de Software · simulação, level design e ferramentas.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nicschulze123-sudo.github.io/links/">
 <meta property="og:title" content="Links.Nicolas.Schulze">
 <meta property="og:description" content="Desenvolvedor Unity · Portfólio, Instagram e YouTube.">
-<meta property="og:image" content="https://nicschulze123-sudo.github.io/links/preview.jpg">
+<meta property="og:image" content="https://nicschulze123-sudo.github.io/links/preview-logo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Monograma N de Nicolas Schulze">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0F0E17">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
@@ -23,7 +26,7 @@
 <style>
 :root{
   color-scheme:dark;
-  --surface:#0F0E17;--surface-raised:#17152A;--line:#2C2942;--line-strong:#4A4663;
+  --surface:#0F0E17;--surface-raised:#17152A;--line:#2C2942;--line-strong:#4A4663;--img-line:#17152A;
   --ink:#EDEBF5;--ink-body:#C9C5DA;--ink-muted:#A9A4BF;
   --estudo:#9D7CFF;--estudo-soft:#231F3D;--on-estudo:#0F0E17;--focus:#9D7CFF;
   --estudo-hover:#B29AFF;--error:#FF9C8A;
@@ -34,22 +37,22 @@
   --radius-sm:8px;--radius-lg:16px;--radius-xl:20px;
 }
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]){color-scheme:light;
-  --surface:#F2EFE8;--surface-raised:#FBF9F4;--line:#C8C1B2;--line-strong:#9A94AD;
+  --surface:#FFFFFF;--surface-raised:#F2EFE8;--line:#E4E1EA;--line-strong:#A9A4BF;--img-line:#E4E1EA;
   --ink:#0F0E17;--ink-body:#3E3A52;--ink-muted:#5E5A73;
   --estudo:#6A4BD6;--estudo-soft:#E6E0FA;--on-estudo:#F2EFE8;--focus:#6A4BD6;
   --estudo-hover:#5638C0;--error:#B3261E;}}
 :root[data-theme="light"]{color-scheme:light;
-  --surface:#F2EFE8;--surface-raised:#FBF9F4;--line:#C8C1B2;--line-strong:#9A94AD;
+  --surface:#FFFFFF;--surface-raised:#F2EFE8;--line:#E4E1EA;--line-strong:#A9A4BF;--img-line:#E4E1EA;
   --ink:#0F0E17;--ink-body:#3E3A52;--ink-muted:#5E5A73;
   --estudo:#6A4BD6;--estudo-soft:#E6E0FA;--on-estudo:#F2EFE8;--focus:#6A4BD6;
   --estudo-hover:#5638C0;--error:#B3261E;}
 :root[data-mode="light"]{color-scheme:light;
-  --surface:#F2EFE8;--surface-raised:#FBF9F4;--line:#C8C1B2;--line-strong:#9A94AD;
+  --surface:#FFFFFF;--surface-raised:#F2EFE8;--line:#E4E1EA;--line-strong:#A9A4BF;--img-line:#E4E1EA;
   --ink:#0F0E17;--ink-body:#3E3A52;--ink-muted:#5E5A73;
   --estudo:#6A4BD6;--estudo-soft:#E6E0FA;--on-estudo:#F2EFE8;--focus:#6A4BD6;
   --estudo-hover:#5638C0;--error:#B3261E;}
 :root[data-mode="dark"]{color-scheme:dark;
-  --surface:#0F0E17;--surface-raised:#17152A;--line:#2C2942;--line-strong:#4A4663;
+  --surface:#0F0E17;--surface-raised:#17152A;--line:#2C2942;--line-strong:#4A4663;--img-line:#17152A;
   --ink:#EDEBF5;--ink-body:#C9C5DA;--ink-muted:#A9A4BF;
   --estudo:#9D7CFF;--estudo-soft:#231F3D;--on-estudo:#0F0E17;--focus:#9D7CFF;
   --estudo-hover:#B29AFF;--error:#FF9C8A;}
@@ -79,16 +82,17 @@ a,button,input{font:inherit}
 .mode[aria-pressed="true"]{background:var(--estudo);color:var(--on-estudo)}
 .mode svg{display:block}
 .lockup svg{height:44px;width:auto;display:block;color:var(--estudo)}
-.lockup .rule{width:1px;align-self:stretch;background:var(--line-strong)}
+.lockup .rule{width:1px;height:36px;align-self:center;background:var(--line-strong)}
 .lockup .name{font:500 13px/1.35 var(--sans);letter-spacing:6px;color:var(--ink);text-transform:uppercase}
 
 .intro{display:flex;flex-direction:column;gap:var(--space-3)}
 .label{font:600 13px/1.2 var(--sans);letter-spacing:4px;text-transform:uppercase;color:var(--estudo)}
 h1{margin:0;font:700 clamp(36px,11vw,48px)/0.95 var(--display);text-transform:uppercase;color:var(--ink);text-wrap:balance;letter-spacing:.3px}
 .intro p{margin:0;color:var(--ink-body)}
+.stack{font:500 13px/1.4 var(--mono);letter-spacing:1px;color:var(--estudo)}
 
 .carousel{position:relative;margin:0;display:flex;flex-direction:column;gap:var(--space-3)}
-.slides{position:relative;aspect-ratio:4/3;max-width:100%;border-radius:var(--radius-xl);border:1px solid var(--line);overflow:hidden;background:#0F0E17;touch-action:pan-y}
+.slides{position:relative;aspect-ratio:4/3;max-width:100%;border-radius:var(--radius-xl);border:1px solid var(--img-line);overflow:hidden;background:#0F0E17;touch-action:pan-y}
 .slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .7s ease;pointer-events:none}
 .slide.on{opacity:1;pointer-events:auto}
 .slide img{display:block;width:100%;height:100%;object-fit:cover}
@@ -144,7 +148,8 @@ footer{display:flex;flex-direction:column;gap:var(--space-4);border-top:1px soli
   <section class="intro">
     <span class="label">Unity · Level design · Ferramentas</span>
     <h1>Desenvolvedor Unity</h1>
-    <p>Engenheiro de Software. Simulação, level design, iluminação e ferramentas em Unity.</p>
+    <p>Engenheiro de Software · simulação, level design e ferramentas.</p>
+    <span class="stack">// C# · HDRP · XR</span>
   </section>
 
   <!--
@@ -193,7 +198,7 @@ footer{display:flex;flex-direction:column;gap:var(--space-4);border-top:1px soli
     function sync(){
       var d=isDark();
       btns.forEach(function(b){b.setAttribute('aria-pressed',String((b.getAttribute('data-set')==='dark')===d))});
-      var tc=document.querySelector('meta[name=theme-color]');if(tc)tc.content=d?'#0F0E17':'#F2EFE8';
+      var tc=document.querySelector('meta[name=theme-color]');if(tc)tc.content=d?'#0F0E17':'#FFFFFF';
     }
     btns.forEach(function(b){b.addEventListener('click',function(){
       var m=b.getAttribute('data-set');root.setAttribute('data-mode',m);
