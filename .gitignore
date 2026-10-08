@@ -1,0 +1,8 @@
+# Editor local: fica só no seu computador, nunca vai para o site
+_editor/
+
+# Arquivos do sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp
