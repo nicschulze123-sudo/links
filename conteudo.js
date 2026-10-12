@@ -34,6 +34,9 @@ window.CONTEUDO = {
       "destaque": false
     }
   ],
+  "creditos": {
+    "House Farm": "Modelos e texturas: assets de terceiros. Level design, iluminação e ferramentas: autoria própria."
+  },
   "projetos": [
     {
       "imagem": "projetos/house-farm-01.jpg",

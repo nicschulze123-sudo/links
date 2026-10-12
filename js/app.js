@@ -42,7 +42,12 @@
           ativo: !!(l && l.ativo),
           destaque: !!(l && l.destaque)
         };
-      }).filter(function (l) { return l.nome; }),
+      }).filter(function (l) { return l.nome && l.ativo && l.url; }),
+      creditos: (function (cr) {
+        var out = {};
+        if (cr && typeof cr === 'object') Object.keys(cr).slice(0, 20).forEach(function (k) { out[texto(k, 40)] = texto(cr[k], 200); });
+        return out;
+      })(dados.creditos),
       projetos: (Array.isArray(dados.projetos) ? dados.projetos : []).slice(0, 80).map(function (s) {
         return {
           imagem: imagemSegura(s && s.imagem),
@@ -151,7 +156,7 @@
       var d = el('button', 'dot');
       d.type = 'button';
       d.setAttribute('aria-label', 'Imagem ' + (k + 1));
-      d.addEventListener('click', function () { ir(k); reiniciar(); });
+      d.addEventListener('click', function () { anunciar(); ir(k); reiniciar(); });
       dots.appendChild(d);
     });
     dots.classList.toggle('many', car.lista.length > 12);
@@ -170,6 +175,9 @@
       if (dots[j]) dots[j].setAttribute('aria-current', String(j === car.i));
     }
     $('cur').textContent = pad(car.i + 1);
+    var atual = car.lista[car.i], cred = $('credito');
+    var txt = atual && car.creditos ? (car.creditos[atual.projeto] || '') : '';
+    cred.textContent = txt; cred.hidden = !txt;
     carregar(car.i); carregar(car.i + 1); carregar(car.i - 1);
   }
   function carregar(k) {
@@ -179,17 +187,36 @@
   }
   function reiniciar() {
     clearInterval(car.timer);
-    if (!parado && car.lista.length > 1) {
+    if (!car.parado && car.lista.length > 1) {
       car.timer = setInterval(function () { if (!car.pausado && !document.hidden) ir(car.i + 1); }, 4500);
     }
   }
 
+  var ICON_PAUSA = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+  var ICON_PLAY = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10-6.5a1 1 0 0 0 0-1.72l-10-6.5A1 1 0 0 0 8 5.5Z"/></svg>';
+  function iconeTroca(btn) {
+    var tocando = !car.parado;
+    btn.replaceChildren();
+    var tmp = document.createElement('template');
+    tmp.innerHTML = tocando ? ICON_PAUSA : ICON_PLAY; // ícones fixos, sem conteúdo externo
+    btn.appendChild(tmp.content);
+    btn.setAttribute('aria-label', tocando ? 'Pausar troca automática das imagens' : 'Continuar troca automática das imagens');
+    btn.setAttribute('aria-pressed', String(!tocando));
+    btn.title = tocando ? 'Pausar' : 'Continuar';
+  }
+  function anunciar() { $('count').setAttribute('aria-live', 'polite'); }
   function ligarCarrossel() {
     var box = $('slides');
-    box.querySelector('.prev').addEventListener('click', function () { ir(car.i - 1); reiniciar(); });
-    box.querySelector('.next').addEventListener('click', function () { ir(car.i + 1); reiniciar(); });
+    var play = $('play');
+    car.parado = parado;
+    iconeTroca(play);
+    play.addEventListener('click', function () { car.parado = !car.parado; iconeTroca(play); reiniciar(); });
+    box.querySelector('.prev').addEventListener('click', function () { anunciar(); ir(car.i - 1); reiniciar(); });
+    box.querySelector('.next').addEventListener('click', function () { anunciar(); ir(car.i + 1); reiniciar(); });
     box.addEventListener('mouseenter', function () { car.pausado = true; });
     box.addEventListener('mouseleave', function () { car.pausado = false; });
+    box.addEventListener('focusin', function () { car.pausado = true; });
+    box.addEventListener('focusout', function () { car.pausado = false; });
     var x0 = null;
     box.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
     box.addEventListener('touchend', function (e) {
@@ -230,6 +257,7 @@
     renderPerfil(c.perfil);
     renderLinks(c.links);
     car.todos = c.projetos;
+    car.creditos = c.creditos;
     if (car.filtro !== 'Todos' && !car.todos.some(function (s) { return s.projeto === car.filtro; })) car.filtro = 'Todos';
     renderFiltros();
     montarSlides();
